@@ -31,5 +31,12 @@ public class Punto {
 		
 		return d;
 	}
+
+	@Override
+	public String toString() {
+		return "Punto [x=" + x + ", y=" + y + "]";
+	}
+	
+	
 }
 
