@@ -15,6 +15,12 @@ public class Hora {
 	public Hora() {
 	}
 
+	public Hora(Hora h) {
+		this.hora = h.hora;
+		this.minutos = h.minutos;
+		this.segundos = h.segundos;
+	}
+
 	public int getHora() {
 		return hora;
 	}
@@ -43,23 +49,22 @@ public class Hora {
 
 		for (int i = 1; i <= incremento; i++) {
 			segundos++;
-			
-			if(segundos==60) {
-				segundos=0;
+
+			if (segundos == 60) {
+				segundos = 0;
 				minutos++;
 			}
-			
-			if(minutos==60) {
-				minutos=0;
+
+			if (minutos == 60) {
+				minutos = 0;
 				hora++;
 			}
-			
-			if(hora==24) {
-				hora=0;
+
+			if (hora == 24) {
+				hora = 0;
 			}
 		}
-		
-		
+
 	}
 
 }
