@@ -50,14 +50,22 @@ public class Libro {
 	 */
 	boolean prestamo() {
 
+		// Creamos la variable que vamos a devolver
 		boolean prestado = true;
 
+		// Si hay mas ejemplares prestados que cantidad de ejemplares
 		if (ejemplaresPrestados >= numeroEjemplares) {
+
+			// Cambiamos a false ya que no podemos prestar un libro que no tenemos
 			prestado = false;
+
+			// Si no
 		} else {
+			// Prestamos el libro y aumentamos los ejemplares prestados
 			ejemplaresPrestados++;
 		}
 
+		// Devolvemos si se ha podido prestar
 		return prestado;
 	}
 
@@ -68,15 +76,26 @@ public class Libro {
 	 */
 	boolean devolución() {
 
+		// Creamos la variable que vamos a devolver
 		boolean devuelto = true;
 
+		// Si los ejemplares prestado son menores o iguales que 0
 		if (ejemplaresPrestados <= 0) {
+
+			// Mostramos un error de que no se puede devolver
 			System.err.println("No puedes devolver un libro que no se ha prestado");
+
+			// Cambiamos la variable a false
 			devuelto = false;
+
+			// Si no
 		} else {
-			ejemplaresPrestados++;
+
+			// Devolvemos el libro y decrementamos los prestados en 1
+			ejemplaresPrestados--;
 		}
 
+		// Devolvemos si se ha podido devolver el libro o no
 		return devuelto;
 	}
 
